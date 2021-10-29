@@ -17,7 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->text('description');
-            $table->bigInteger('plan_types_id');
+            $table->bigInteger('plan_types_id')->references('id')->on('plan_types');
             $table->timestamps();
         });
     }
